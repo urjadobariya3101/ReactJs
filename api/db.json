@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-shbsfvhjdsbvhdjf",
+      "author": "typicode"
+    },
+    {
+      "title": "jefbsj",
+      "author": "ndsvn",
+      "id": 2
+    },
+    {
+      "title": "Urja",
+      "author": "Dobariya",
+      "id": 3
+    },
+    {
+      "title": "A!",
+      "author": "A1",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
