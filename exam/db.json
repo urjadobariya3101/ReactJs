@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "firstName": "urja",
+      "lastName": "Dobariya",
+      "age": "19",
+      "id": 2
+    },
+    {
+      "firstName": "Khush",
+      "lastName": "Dobariya",
+      "age": "17",
+      "id": 3
+    },
+    {
+      "firstName": "dhruvi",
+      "lastName": "marakana",
+      "age": "18",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
