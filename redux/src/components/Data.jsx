@@ -1,11 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { DELETE_PRODUCT_PROGRESS, POST_PRODUCT_PROGRESS } from "../redux-saga/admin/action/action";
+import { DELETE_PRODUCT_PROGRESS, POST_PRODUCT_PROGRESS, PUT_PRODUCT_PROGRESS } from "../redux-saga/admin/action/action";
+import Swal from "sweetalert2";
 
 const Data = () => {
   const name = useRef();
   const price = useRef();
   const product = useSelector((state) => state.productReducer);
+
+  const [view, setView] = useState({});
 
   const dispatch = useDispatch();
 
@@ -20,18 +23,46 @@ const Data = () => {
     name.current.value = "";
     price.current.value = "";
 
-    console.log(data);
+    Swal.fire({
+      title: "Good job!",
+      text: "Data added successfully!",
+      icon: "success"
+    });
   };
 
   // delete data
   const handleDelete = (val) => {
     console.log(val);
-    dispatch({type: DELETE_PRODUCT_PROGRESS})
+    dispatch({type: DELETE_PRODUCT_PROGRESS, payload: val})
   }
 
   // update data
   const handleView = (val) => {
     console.log(val);
+    setView(val);
+  }
+
+  const handle = (e) => {
+    setView({...view,[e.target.name]:e.target.value})
+  }
+
+  const handleUpdate = () => {
+    dispatch({type:PUT_PRODUCT_PROGRESS, payload:view})
+    // Swal.fire({
+    //   title: "Do you want to save the changes?",
+    //   showDenyButton: true,
+    //   showCancelButton: true,
+    //   confirmButtonText: "Save",
+    //   denyButtonText: `Don't save`
+    // })
+    // .then((result) => {
+    //   /* Read more about isConfirmed, isDenied below */
+    //   if (result.isConfirmed) {
+    //     Swal.fire("Saved!", "", "success");
+    //   } else if (result.isDenied) {
+    //     Swal.fire("Changes are not saved", "", "info");
+    //   }
+    // });
   }
 
   return (
@@ -39,8 +70,16 @@ const Data = () => {
       <input type="text" ref={name} />
       <input type="number" ref={price} />
       <br />
-      <button className="btn btn-info mt-3" onClick={handleSubmit}>
+      <button className="btn btn-info mt-3 mb-3" onClick={handleSubmit}>
         Add
+      </button>
+      <br />
+
+      <input type="text" name="productName" value={view.productName} onChange={handle}/>
+      <input type="number" name="price" value={view.price} onChange={handle}/>
+      <br />
+      <button className="btn btn-info mt-3" onClick={handleUpdate}>
+        Update
       </button>
 
       <div className="container">

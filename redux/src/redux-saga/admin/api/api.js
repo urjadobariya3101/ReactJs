@@ -46,9 +46,29 @@ export async function post_product(action) {
 // delete api
 export async function delete_product(action) {
   return axios
-    .delete(BASE_URL + DELETE_PRODUCT_API + "/"`${action.id}`)
+    .delete(`http://localhost:3001/posts/${action.payload.id}`)
     .then((res) => {
       console.log(res, "res from api");
+      const id = action.payload.id;
+      // console.log(id);
+      const status = res.status;
+      return {
+        id,
+        status,
+      };
+    })
+    .catch((error) => {
+      console.log(error, "eweeeeeeeeeeee");
+    });
+}
+
+// update api
+export async function put_product(action) {
+  console.log(action,"ehfdfjvnf jdk");
+  return axios
+    .put(`http://localhost:3001/posts/${action.payload.id},${action.payload}`)
+    .then((res) => {
+      console.log(res, "response from api");
       const id = action.payload.id;
       const status = res.status;
       return {
@@ -57,13 +77,6 @@ export async function delete_product(action) {
       };
     })
     .catch((error) => {
-      console.log(error,"eweeeeeeeeeeee");
+      console.log(error);
     });
-}
-
-// update api
-export async function put_product(action){
-  return axios.put(BASE_URL + PUT_PRODUCT_API + "/" `${action.id}`).then((res)=>{
-    console.log(res,"response from api");
-  })
 }

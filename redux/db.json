@@ -6,34 +6,19 @@
       "price": "2000"
     },
     {
-      "id": 2,
-      "productName": "Mobile",
-      "price": "20000"
-    },
-    {
-      "productName": "TV",
-      "price": "2000",
-      "id": 3
+      "productName": "fridge",
+      "price": "3456",
+      "id": 2
     },
     {
       "productName": "AC",
-      "price": "500",
+      "price": "1000",
+      "id": 3
+    },
+    {
+      "productName": "TV",
+      "price": "347858",
       "id": 4
-    },
-    {
-      "productName": "fridge",
-      "price": "100",
-      "id": 5
-    },
-    {
-      "productName": "fan",
-      "price": "400",
-      "id": 6
-    },
-    {
-      "productName": "manali",
-      "price": "0",
-      "id": 7
     }
   ],
   "comments": [],
