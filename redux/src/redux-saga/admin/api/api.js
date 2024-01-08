@@ -64,16 +64,20 @@ export async function delete_product(action) {
 
 // update api
 export async function put_product(action) {
-  console.log(action,"ehfdfjvnf jdk");
+  console.log(action,"{}{}{}{}{}{}{}{}{}{}");
+  const index = action.index
   return axios
-    .put(`http://localhost:3001/posts/${action.payload.id},${action.payload}`)
+    .put(`http://localhost:3001/posts/${action.payload.id}`,action.payload)
     .then((res) => {
-      console.log(res, "response from api");
+      // console.log(res, "response from api");
       const id = action.payload.id;
       const status = res.status;
+      const data = res.data;
       return {
         id,
         status,
+        data,
+        index
       };
     })
     .catch((error) => {

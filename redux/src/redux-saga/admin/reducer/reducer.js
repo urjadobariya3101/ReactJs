@@ -51,94 +51,83 @@ const productReducer = (state = initialState, action) => {
     }
 
     // post case
-    case POST_PRODUCT_PROGRESS:{
-      return{
+    case POST_PRODUCT_PROGRESS: {
+      return {
         ...state,
-        isLoading : true
-      }
+        isLoading: true,
+      };
     }
 
-    case POST_PRODUCT_SUCCESS:{
-      return{
+    case POST_PRODUCT_SUCCESS: {
+      return {
         ...state,
         isLoading: false,
         product: state.product.concat(action.data),
-        isError: null
-      }
+        isError: null,
+      };
     }
 
-    case POST_PRODUCT_ERROR:{
-      return{
+    case POST_PRODUCT_ERROR: {
+      return {
         ...state,
         isLoading: false,
-        isError: action.payload
-      }
+        isError: action.payload,
+      };
     }
 
     // delete case
-    case DELETE_PRODUCT_PROGRESS:{
-      return{
+    case DELETE_PRODUCT_PROGRESS: {
+      return {
         ...state,
-        isLoading: true
-      }
+        isLoading: true,
+      };
     }
 
-    case DELETE_PRODUCT_SUCCESS:{
+    case DELETE_PRODUCT_SUCCESS: {
       Swal.fire({
         text: "Data deleted successfully!",
-        icon: "success"
+        icon: "success",
       });
-      return{
+      return {
         ...state,
-        product: state.product.filter(val=>val.id !== action.id),
-        isLoading:false,
-        isError: null
-      }
+        product: state.product.filter((val) => val.id !== action.id),
+        isLoading: false,
+        isError: null,
+      };
     }
 
     case DELETE_PRODUCT_ERROR: {
-      return{
+      return {
         ...state,
         isLoading: false,
-        isError: action.payload
-      }
+        isError: action.payload,
+      };
     }
 
     //put product
     case PUT_PRODUCT_PROGRESS: {
-      return{
+      return {
         ...state,
-        isLoading: true
-      }
+        isLoading: true,
+      };
     }
 
-    case PUT_PRODUCT_SUCCESS:{
+    case PUT_PRODUCT_SUCCESS: {
+      console.log(action);
+      state.product.splice(action.index, 1, action.data)
       return {
         ...state,
         isLoading: false,
-        product : state.product.map((item)=>{
-          if(item.id === action.data.id){
-            return{
-              ...item,
-              ...action.data
-            }
-          }
-          else{
-            return{
-              item
-            }
-          }
-        }),
-        isError: null
-      }
+        isError: null,
+      };
     }
 
-    case PUT_PRODUCT_ERROR:{
-      return{
+    case PUT_PRODUCT_ERROR: {
+      return {
         ...state,
         isLoading: false,
-        isError : action.data
-      }
+        isError: action.data,
+      };
     }
 
     default: {

@@ -1,24 +1,24 @@
 {
   "posts": [
     {
-      "id": 1,
-      "productName": "Watch",
-      "price": "2000"
+      "productName": "hello",
+      "price": "1200",
+      "id": 1
     },
     {
-      "productName": "fridge",
-      "price": "3456",
-      "id": 2
-    },
-    {
-      "productName": "AC",
-      "price": "1000",
+      "productName": "tv",
+      "price": "1211",
       "id": 3
     },
     {
-      "productName": "TV",
-      "price": "347858",
+      "productName": "ac",
+      "price": "222",
       "id": 4
+    },
+    {
+      "productName": "fridge",
+      "price": "123",
+      "id": 5
     }
   ],
   "comments": [],

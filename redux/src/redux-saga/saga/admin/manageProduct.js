@@ -71,13 +71,14 @@ export function* handle_delete_product_api(action) {
 // put product data
 export function* handle_update_product_api(action) {
   try {
+    // console.log(action, "action from manage product");
     const res = yield call(put_product, action);
-    console.log(action, "action from manage product");
-    console.log(res, "res from manage");
+    console.log(res, "res from manage{}{}{}{}{}{}{}{}");
     const status = res.status;
-
+    const data = res.data
+    const index = res.index
     if (status === 200) {
-      yield put({ type: PUT_PRODUCT_SUCCESS });
+      yield put({ type: PUT_PRODUCT_SUCCESS, data, index});
     } else {
       yield put({ type: PUT_PRODUCT_ERROR });
     }
