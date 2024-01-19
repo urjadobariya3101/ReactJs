@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { POST_PRODUCT_PROGRESS } from '../redux-saga/admin/action/action';
 
-const Data = () => {
+const Admin = () => {
 
     const productName = useRef();
     const price = useRef();
@@ -17,6 +17,7 @@ const Data = () => {
             productName : productName.current.value,
             price : price.current.value
         }
+        console.log(data);
 
         dispatch({type:POST_PRODUCT_PROGRESS, payload : data})
         productName.current.value = "";
@@ -55,4 +56,4 @@ const Data = () => {
   )
 }
 
-export default Data;
+export default Admin;

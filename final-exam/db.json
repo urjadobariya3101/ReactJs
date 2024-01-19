@@ -11,22 +11,19 @@
       "price": 1234
     },
     {
+      "productName": "ac",
+      "price": "45",
       "id": 3
     },
     {
+      "productName": "fnekjw",
+      "price": "334",
       "id": 4
     },
     {
+      "productName": "tea",
+      "price": "35",
       "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
     }
   ],
   "comments": [

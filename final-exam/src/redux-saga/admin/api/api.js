@@ -19,11 +19,11 @@ export async function get_product() {
 }
 
 // post api
-// post api
 export async function post_product(action) {
   // console.log(action,"api");
+  console.log(action);
   return axios
-    .post(BASE_URL + POST_PRODUCT_API, action.payload)
+    .post(BASE_URL + POST_PRODUCT_API, action)
     .then((res) => {
       // console.log(res, "res from api");
       const data = res.data;
