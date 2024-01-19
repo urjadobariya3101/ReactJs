@@ -27,6 +27,7 @@ export async function get_product() {
 
 // post api
 export async function post_product(action) {
+  console.log(action,"api");
   return axios
     .post(BASE_URL + POST_PRODUCT_API, action.payload)
     .then((res) => {

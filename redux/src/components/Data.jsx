@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 const Data = () => {
   const productName = useRef();
   const price = useRef();
+  
   const product = useSelector((state) => state.productReducer);
   const [index, setindex] = useState();
 
@@ -98,7 +99,7 @@ const Data = () => {
           {product.product?.map((val, ind) => {
             return (
               <React.Fragment key={ind}>
-                <div className="card col-md-3 m-2" style={{ width: `18rem` }}>
+                <div className="card col-md-2 m-2" style={{ width: `18rem` }}>
                   <div className="card-body">
                     <p className="card-text">{val.id}</p>
                     <p className="card-text">{val.productName}</p>

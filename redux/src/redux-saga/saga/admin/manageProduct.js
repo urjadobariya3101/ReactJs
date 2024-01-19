@@ -16,7 +16,7 @@ import { call, put } from "redux-saga/effects";
 export function* handle_get_product_api(action) {
   try {
     const res = yield call(get_product, action);
-    // console.log(res, "frpm manageproduct");
+    console.log(res, "frpm manageproduct");
     const data = res.data;
     const status = res.status;
 
